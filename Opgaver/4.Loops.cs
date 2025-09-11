@@ -8,11 +8,11 @@ namespace Opgaver
         {
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Velkommen til opgaver omkring Loops både med og uden datastrukturer!");
-            Loop1();
-            Loop2();
-            Loop3();
-            Loop4();
-            Loop5();
+            //Loop1();
+            //Loop2();
+            //Loop3();
+            //Loop4();
+            //Loop5();
             Loop6();
             Loop7();
             Loop8();
@@ -27,6 +27,13 @@ namespace Opgaver
             Console.WriteLine("Opgave 1:");
             Console.WriteLine("Brug et loop til at udskrive tallene fra 1 til 10.");
             // Lav opgaven herunder!
+            
+            Console.WriteLine();
+            for(int i = 1; i < 11; i++)
+            {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void Loop2()
@@ -34,6 +41,17 @@ namespace Opgaver
             Console.WriteLine("Opgave 2:");
             Console.WriteLine("Brug et loop og en if-betingelse til at udskrive alle lige tal fra 2 til 20.");
             // Lav opgaven herunder!
+
+            Console.WriteLine();
+            for(int i = 1; i < 21; i++)
+            {
+                if(i % 2 == 1)
+                {
+                    continue;
+                }
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void Loop3()
@@ -41,6 +59,13 @@ namespace Opgaver
             Console.WriteLine("Opgave 3:");
             Console.WriteLine("Brug et loop til at lægge alle tal fra 1 til 100 sammen og udskriv resultatet.");
             // Lav opgaven herunder!
+            
+            Console.WriteLine();
+            for(int i = 0; i < 101; i++)
+            {
+
+            }
+            
         }
 
         public static void Loop4()
@@ -48,6 +73,31 @@ namespace Opgaver
             Console.WriteLine("Opgave 4:");
             Console.WriteLine("Bed brugeren om at indtaste sit navn og et tal. Udskriv navnet det antal gange ved hjælp af et loop.");
             // Lav opgaven herunder!
+            bool isValid = false;
+            Console.WriteLine($"\nIndtast dit navn:\n");
+            string userName = Console.ReadLine();
+            Console.WriteLine($"\nIndtast det antal gange dit navn skal vises (som et heltal):\n");
+            string userInput = Console.ReadLine();
+            int tal = 0;
+            
+            while(!isValid)
+            {
+                if(int.TryParse(userInput, out tal))
+                {
+                    Console.WriteLine();
+                    for (int i = 0; i < tal; i++)
+                    {
+                        Console.Write($"{userName} ");
+                    }
+                    Console.WriteLine("\n");
+                    isValid = true;
+                }
+                else
+                {
+                    Console.WriteLine($"\nDet indtastede er ikke et heltal, prøv venligst igen:\n");
+                    userInput = Console.ReadLine();
+                }
+            }
         }
 
         public static void Loop5()
@@ -55,6 +105,30 @@ namespace Opgaver
             Console.WriteLine("Opgave 5:");
             Console.WriteLine("Bed brugeren om at indtaste et tal. Brug et loop til at udskrive alle tal fra det indtastede tal og ned til 1.");
             // Lav opgaven herunder!
+            Console.WriteLine($"\nIndtast et heltal:\n");
+            bool isValid = false;
+            string userInput = Console.ReadLine();
+            int tal = 0;
+
+            while (!isValid)
+            {
+                if(int.TryParse(userInput,out tal))
+                {
+                    Console.WriteLine();
+                    for (int i = tal; i > 0; i--)
+                    {
+                        Console.Write($"{i} ");
+                    }
+                    Console.WriteLine("\n");
+                    isValid = true;
+                }
+                else
+                {
+                    Console.WriteLine($"\nDet indtastede \"{userInput}\" er ikke et heltal, prøv venligst igen:\n");
+                    userInput = Console.ReadLine();
+                }
+
+            }
         }
 
         public static void Loop6()
@@ -63,6 +137,14 @@ namespace Opgaver
             Console.WriteLine(@"Brug et loop til at udskrive alle bogstaverne i dit navn (ét bogstav pr. linje). 
             Navnet skal være gemt i en string variabel.");
             // Lav opgaven herunder!
+            Console.WriteLine($"\nIndtast navn\n");
+            string userName = Console.ReadLine();
+
+            foreach(char c in userName)
+            {
+                Console.Write($"{c} ");
+            }
+            Console.WriteLine();
         }
 
         public static void Loop7()
