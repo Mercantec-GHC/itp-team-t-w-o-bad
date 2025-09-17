@@ -13,13 +13,13 @@ namespace Opgaver
             //Loop3();
             //Loop4();
             //Loop5();
-            Loop6();
-            Loop7();
-            Loop8();
-            Loop9();
-            Loop10();
+            //Loop6();
+            //Loop7();
+            //Loop8();
+            //Loop9();
+            //Loop10();
             BankeBøf();
-            MiniProjektLommeregner();
+            //MiniProjektLommeregner();
         }
 
         public static void Loop1()
@@ -29,7 +29,7 @@ namespace Opgaver
             // Lav opgaven herunder!
             
             Console.WriteLine();
-            for(int i = 1; i < 11; i++)
+            for(int i = 1; i <= 10; i++)
             {
                 Console.Write($"{i} ");
             }
@@ -43,7 +43,7 @@ namespace Opgaver
             // Lav opgaven herunder!
 
             Console.WriteLine();
-            for(int i = 1; i < 21; i++)
+            for(int i = 1; i <= 20; i++)
             {
                 if(i % 2 == 1)
                 {
@@ -59,13 +59,14 @@ namespace Opgaver
             Console.WriteLine("Opgave 3:");
             Console.WriteLine("Brug et loop til at lægge alle tal fra 1 til 100 sammen og udskriv resultatet.");
             // Lav opgaven herunder!
+            int sum = 0;
             
             Console.WriteLine();
-            for(int i = 0; i < 101; i++)
+            for(int i = 1; i <= 100; i++)
             {
-
+                sum = sum + i;
             }
-            
+            Console.WriteLine($"Summen er: \"{sum}\"\n");
         }
 
         public static void Loop4()
@@ -137,14 +138,15 @@ namespace Opgaver
             Console.WriteLine(@"Brug et loop til at udskrive alle bogstaverne i dit navn (ét bogstav pr. linje). 
             Navnet skal være gemt i en string variabel.");
             // Lav opgaven herunder!
-            Console.WriteLine($"\nIndtast navn\n");
+            Console.WriteLine($"\nIndtast navn");
             string userName = Console.ReadLine();
-
+            Console.WriteLine();
+            
             foreach(char c in userName)
             {
                 Console.Write($"{c} ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
         public static void Loop7()
@@ -152,6 +154,18 @@ namespace Opgaver
             Console.WriteLine("Opgave 7:");
             Console.WriteLine("Brug et loop til at tælle, hvor mange gange bogstavet 'a' optræder i en tekst, som brugeren indtaster.");
             // Lav opgaven herunder!
+            int counter = 0;
+            Console.WriteLine("\nIndtast en tekst:");
+            string userInput = Console.ReadLine().ToLower();
+
+            foreach(char c in userInput)
+            {
+                if(c.Equals('a'))
+                {
+                    counter += 1;
+                }
+            }
+            Console.WriteLine($"\nDen indtastede tekst indeholder {counter} \"a'er\".\n");
         }
 
         public static void Loop8()
@@ -159,6 +173,20 @@ namespace Opgaver
             Console.WriteLine("Opgave 8:");
             Console.WriteLine("Brug et loop til at udskrive alle ulige tal mellem 1 og 50.");
             // Lav opgaven herunder!
+            Console.WriteLine();
+            
+            for(int i = 0; i <= 50; i++)
+            {
+                if(i %  2 == 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.Write($"{i} ");
+                }
+            }
+            Console.WriteLine("\n");
         }
 
         public static void Loop9()
@@ -166,6 +194,26 @@ namespace Opgaver
             Console.WriteLine("Opgave 9:");
             Console.WriteLine("Bed brugeren om at indtaste 5 tal (ét ad gangen). Brug et loop til at lægge dem sammen og udskriv summen til sidst.");
             // Lav opgaven herunder!
+            bool isInt = false;
+            int[] numbers = new int[5];
+            int count = 0;
+
+            Console.WriteLine($"\nDu skal nu indtaste 5 tal, som lægges sammen. Indtast første tal:");
+            string brugerInput = Console.ReadLine();
+
+            while (!isInt)
+            {
+                if(int.TryParse(brugerInput, out count))
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine($"\nDet indtastede er ikke et heltal, prøv igen:\n");
+                    brugerInput = Console.ReadLine();
+                }
+            }
+
         }
 
         public static void Loop10()
@@ -181,6 +229,28 @@ namespace Opgaver
             Udskriv 'Banke' hvis tallet er deleligt med 3, 'Bøf' hvis tallet er deleligt med 5 
             og 'BankeBøf' hvis tallet er deleligt med både 3 og 5.");
             // Lav opgaven herunder!
+            Console.WriteLine();
+
+            for(int i = 1;i <= 30; i++)
+            {
+                if( i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.Write($"Bankebøf ");
+                }
+                else if( i % 3 == 0)
+                {
+                    Console.Write($"Banke ");
+                }
+                else if(i % 5 == 0)
+                {
+                    Console.Write($"Bøf ");
+                }
+                else
+                {
+                    Console.Write($"{i} ");
+                }
+            }
+            Console.WriteLine("\n");
         }
         public static void MiniProjektLommeregner()
         {
