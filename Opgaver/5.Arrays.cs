@@ -13,18 +13,18 @@ namespace Opgaver
             // Da I ikke har lært omkring loops og metoder endnu, er det ikke nødvendigt at bruge dem her
             // I må dog gerne bruge loops og metoder i opgaverne herunder
 
-            Array1();
-            Array2();
-            Array3();
+            //Array1();
+            //Array2();
+            //Array3();
             List1();
             List2();
             List3();
             List4();
             List5();
-            Dict1();
-            Dict2();
-            MiniProjektKlasseliste();
-            MiniProjektIndkøbsliste();
+            //Dict1();
+            //Dict2();
+            //MiniProjektKlasseliste();
+            //MiniProjektIndkøbsliste();
         }
 
         public static void Array1()
@@ -35,6 +35,21 @@ namespace Opgaver
             );
             // Lav opgaven herunder!
             string[] navne = new string[5];
+
+            for (int i = 0; i < navne.Length; i++)
+            {
+                Console.WriteLine($"\nIndtast det næste navn:");
+                navne[i] = Console.ReadLine();
+            }
+            
+            Console.WriteLine("\n");
+            
+            // Den efterfølgende for-loop og Console output er en test, for at sikre at logikken i første del virker som tiltænkt.
+            for (int i = 0;i < navne.Length; i++)
+            {
+                Console.Write($"{navne[i]} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void Array2()
@@ -44,6 +59,38 @@ namespace Opgaver
                 "Lav et program som gemmer 5 tal i et array og udskriver det største tal."
             );
             // Lav opgaven herunder!
+
+            double[] numbers = new double[5];
+            string userInput;
+            bool isDouble = false;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine("\nIndtast det næste tal:");
+                userInput = Console.ReadLine();
+
+                while (!isDouble)
+                {
+                    if (double.TryParse(userInput, out numbers[i]))
+                    {
+                        numbers[i] = Convert.ToDouble(userInput);
+                        isDouble = true;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine($"\nDet indtastede: {userInput}, er ikke et tal. Prøv venligst igen:");
+                        userInput = Console.ReadLine();
+                    }
+                }
+            }
+
+            Console.WriteLine("\n");
+            for(int i  = 0; i < numbers.Length; i++)
+            {
+                Console.Write($"{numbers[i]} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void Array3()
@@ -54,6 +101,22 @@ namespace Opgaver
                 og udskriver dem alle i omvendt rækkefølge."
             );
             // Lav opgaven herunder!
+
+            string[] cityNames = new string[5];
+
+            for (int i = 0; i < cityNames.Length; i++)
+            {
+                Console.WriteLine($"\nIndtast det næste bynavn:");
+                cityNames[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("\n");
+
+            for (int i = cityNames.Length - 1; i >= 0; i--)
+            {
+                Console.Write($"{cityNames[i]} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void List1()
@@ -64,7 +127,21 @@ namespace Opgaver
                 som brugeren indtaster i en liste."
             );
             // Lav opgaven herunder!
+            
             List<string> navne = new List<string>();
+
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"\nIndtast det næste navn:");
+                navne.Add(Console.ReadLine());
+            }
+
+            Console.WriteLine("\n");
+            for(int i = 0; i <= navne.Count - 1; i++)
+            {
+                Console.Write($"{navne[i]} ");
+            }
+            Console.WriteLine("\n");
         }
 
         public static void List2()

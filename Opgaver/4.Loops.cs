@@ -18,8 +18,8 @@ namespace Opgaver
             //Loop8();
             //Loop9();
             //Loop10();
-            BankeBøf();
-            //MiniProjektLommeregner();
+            //BankeBøf();
+            MiniProjektLommeregner();
         }
 
         public static void Loop1()
@@ -260,6 +260,14 @@ namespace Opgaver
             Console.WriteLine("Programmet skal udregne og udskrive resultatet.");
             Console.WriteLine("Tip: Brug if/else eller switch til at vælge regnearten.");
             // Lav opgaven herunder!
+            float number1 = 0;
+            float number2 = 0;
+            string userNumber1;
+            string userNumber2;
+            char operatorType;
+
+            Console.WriteLine("\nIndtast det første tal:");
+            
         }
     }
 }
